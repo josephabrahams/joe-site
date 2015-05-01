@@ -1,19 +1,20 @@
 # Jekyll config
 
 exclude: [
-    bower.json,
-    CNAME,
-    Gemfile,
-    Gemfile.lock,
-    Gruntfile.js,
-    LICENSE,
-    node_modules,
-    package.json,
-    README.md
-  ]
+  bower.json,
+  CNAME,
+  Gemfile,
+  Gemfile.lock,
+  Gruntfile.js,
+  LICENSE,
+  node_modules,
+  package.json,
+  README.md
+]
 
 safe: true
 
+# switched from compressed to expanded due to sass map issue
 sass:
-  style: :compressed
+  style: :expanded
 
