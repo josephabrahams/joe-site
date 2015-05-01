@@ -15,5 +15,5 @@ exclude: [
 safe: true
 
 sass:
-  style: :compressed
+  style: :expanded
 
