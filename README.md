@@ -2,12 +2,17 @@
 
 ## Installation
 
+    $ git clone git@github.com:josephabrahams/josephabrahams.com.git
+
+    $ git remote add upstream git@github.com:josephabrahams/gh-pages.git
+
+    $ cd josephabrahams.com
+
     $ bundle install
 
     $ npm install
 
     $ bower install
-
 
 ## Local Development
 
