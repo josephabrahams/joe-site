@@ -1,0 +1,19 @@
+# Jekyll config
+
+exclude: [
+  bower.json,
+  CNAME,
+  Gemfile,
+  Gemfile.lock,
+  Gruntfile.js,
+  LICENSE,
+  node_modules,
+  package.json,
+  README.md
+]
+
+safe: true
+
+sass:
+  style: :compressed
+
