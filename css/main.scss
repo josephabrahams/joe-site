@@ -14,7 +14,7 @@ $black: black;
 
 html {
     box-sizing: border-box;
-    color: $black;
+    // color: $black;
     font-size: 1em;
     line-height: 1.4;
 }
@@ -60,7 +60,7 @@ body {
 .slide {
     position: relative;
     height: 50%;
-    min-height: 320px;
+    // min-height: 320px;
     text-align: center;
     z-index: 1;
 }
@@ -84,6 +84,10 @@ body {
             }
         }
     }
+
+        .slide__text--big {
+            font-size: 1.15em;
+        }
 
 $slide-colors: (
     red: red,
@@ -128,12 +132,24 @@ $slide-colors: (
     }
 }
 
-    .hula-video {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-    }
+#video-player {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 400ms ease;
+}
 
+.mute-button {
+    position: fixed;
+    z-index: 10;
+    right: 0.5em;
+    bottom: 0.4em;
+    color: rgba($black,0.8);
+    font-size: 0.75em;
+    text-decoration: none;
+    &:hover, .touch & {
+        text-decoration: underline;
+    }
+}
 
 
 
@@ -145,21 +161,23 @@ $slide-colors: (
 // Hide visually and from screen readers: h5bp.com/u
 
 .hidden {
-  display: none !important;
-  visibility: hidden;
+    display: none !important;
+    visibility: hidden;
 }
 
+.visible {
+    opacity: 1 !important;
+}
 
 // Hide only visually, but have it available for screen readers: h5bp.com/v
-
 .visuallyhidden {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
 }
 
