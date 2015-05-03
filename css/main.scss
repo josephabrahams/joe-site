@@ -141,10 +141,10 @@ $slide-colors: (
 .mute-button {
     position: fixed;
     z-index: 10;
-    right: 0.5em;
-    bottom: 0.4em;
+    right: 8px;
+    bottom: 3px;
     color: rgba($black,0.8);
-    font-size: 0.75em;
+    font-size: 12px;
     text-decoration: none;
     &:hover, .touch & {
         text-decoration: underline;
