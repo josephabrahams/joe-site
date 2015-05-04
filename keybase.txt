@@ -1,0 +1,73 @@
+==================================================================
+https://keybase.io/josephabrahams
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://josephabrahams.com
+  * I am josephabrahams (https://keybase.io/josephabrahams) on keybase.
+  * I have a public key with fingerprint EEA3 FAD3 05BB 0107 E8EC  217B 1DE9 F007 B39D 34B2
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "fingerprint": "eea3fad305bb0107e8ec217b1de9f007b39d34b2",
+            "host": "keybase.io",
+            "key_id": "1de9f007b39d34b2",
+            "kid": "0101f5717dba88239aa97498bf4d7571f0afb61be6539ed3aa69412a34747e29a4e90a",
+            "uid": "584a09882dc60b601e76dffcfc62da00",
+            "username": "josephabrahams"
+        },
+        "revoke": {
+            "sig_ids": [
+                "434a6edfde8d4cf54b3f3345ad36474f8d738981562e0904ed822ad5b895ff960f"
+            ]
+        },
+        "service": {
+            "hostname": "josephabrahams.com",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1430779825,
+    "expire_in": 157680000,
+    "prev": "250a7aab3934eaf27da483caf40d10ec8cb4a2d2b2510a0e3e004188e5fb1820",
+    "seqno": 6,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.8
+Comment: https://keybase.io/crypto
+
+yMJkAnicbZJviFVFGMbvmta6IBaKSKwFoxDF1ebMzDkz5yatWGgb1BKZGBqXmTPv
+7D1te8/1nHuvLtui10vSh0V0FysJKQJFbf2gVzA0y3SDRYNWMdOywj9FKutKQQsL
+YnOW+uZ8GeZ9n/m9D8/M8KyHMi1NC27efaSxmx1uOvvNvkrmjZUTh3qRinQPyvWi
+LpjaTFjshLgUh8UyyiEASY3UFLtKYQdzEBAQhytHg28w5or6mjJFUBYVoiS9YTFK
+JrAkjGzNHvKhttUH6LumGhbqGJc7XCspBKG+lD5nvlCGaW7rBkujPEeB51IfNJXS
+85lDJGWccSC+ZOBjaXGVKZwrmMS+BenAw8rDDnBPGxOYwCNaYpwKE4iLshus+u0o
+gVJBqlgWZHeC+rIohmrUBWkOSdhprScotxYxyqQH2mgQmgXGZYoaSplrc/GsDSM0
+p8IXjusRwD5moAUhUrtK+K4xvocNesuy7dxqGEzB06we6GFJEHVbj6U4KkdB9I7t
+F8rlUi61Vu4ppfoNoPL/kfIqLGr7XPZCFeIkjIoo51hlUA5TtMMo5twXxM0i2FgK
+Y8iHqcLlnsB2pWOgapHExZJLad+GMpCGcC2ZoIE0DGsHQyACxSTRRBHXwRIDBYyZ
+IwS4RjmCpKEmsL4YoZxnbcpOi7TpFWW5EgPqO3Vy3fRMU0vm4RnT0g+XaZn56P/f
+cFNbc2agbVuydOPFNxdeXIXGfqvOGyscjM2lLcdu9I9cvpC5MxrlVzf/ce+JpDbQ
+d66R2715aOuX1+f3rpr8iOf3fN0+cbb+mf7wxtwXtj89/PmnPZuX7Wsdnu18kbz6
+yfX6a5WR2knyWEfgtu2dc/zcNPbenezYmfuTO0+I3wuj4+9+u+OZV07/Q1tHntp0
+fuj4D1c+GLnZsmCgEg/uarxfrL189O81Tz7XuH25frR10v3r5zobfb5p17Wh/fr8
+/gNoxXf9W8Yz1w69tPPA9PYIas1Xflre0T4hZh0ZnBjvuH1huH/vqUtfzf94++L6
+IN+24c81319dlH29Nrrnl0bv4y/e+/XW3JnZhaevPmt+/BdzmVRz
+=16S0
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/josephabrahams
+
+==================================================================
