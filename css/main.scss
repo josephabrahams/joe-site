@@ -11,6 +11,7 @@
 \*------------------------------------*/
 
 $black: black;
+$white: white;
 
 html {
     box-sizing: border-box;
@@ -42,10 +43,11 @@ html, body {
     height: 100%;
 }
 
-body {
-    // background-color: black;
-    .no-js & {
-        background-color: white;
+a {
+    text-decoration: none;
+    color: $black;
+    &:hover, .touch & {
+        text-decoration: underline;
     }
 }
 
@@ -70,24 +72,16 @@ body {
         margin: 0;
         top: 50%;
         margin-top: -10px;
-        color: $black;
         font-size: 1em;
         line-height: 0em;
         font-weight: normal;
         font-style: normal;
         font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
-        & a {
-            text-decoration: none;
-            color: $black;
-            &:hover, .touch & {
-                text-decoration: underline;
-            }
-        }
     }
 
-        .slide__text--big {
-            font-size: 1.15em;
-        }
+    .slide__text--big {
+        font-size: 1.15em;
+    }
 
 $slide-colors: (
     red: red,
@@ -105,9 +99,11 @@ $slide-colors: (
         .slide__text, .slide__text a {
             &::selection {
                 background: $code;
+                color: $white;
             }
             &::-moz-selection {
                 background: $code;
+                color: $white;
             }
         }
     }
@@ -145,10 +141,6 @@ $slide-colors: (
     bottom: 3px;
     color: rgba($black,0.8);
     font-size: 12px;
-    text-decoration: none;
-    &:hover, .touch & {
-        text-decoration: underline;
-    }
 }
 
 
