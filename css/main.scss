@@ -1,10 +1,5 @@
 ---
 ---
-/*!
- * josephabrahams.com
- *
- */
-
 
 /*------------------------------------*\
     #BASE
@@ -86,7 +81,7 @@ a {
 $slide-colors: (
     red: red,
     orange: orange,
-    yellow: yellow,
+    // yellow: yellow,
     green: green,
     blue: blue,
     indigo: indigo,
@@ -105,6 +100,19 @@ $slide-colors: (
                 background: $code;
                 color: $white;
             }
+        }
+    }
+}
+
+// compressing the css was stripping this out this selector
+.slide--yellow {
+    background: rgba(yellow, 0.5);
+    .slide__text, .slide__text a {
+        &::selection {
+            background: yellow;
+        }
+        &::-moz-selection {
+            background: yellow;
         }
     }
 }

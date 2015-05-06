@@ -14,7 +14,7 @@ exclude: [
 
 safe: true
 
-# switched from compressed to expanded due to sass map issue
+# sass maps seem to have issues when minified using compressed option
 sass:
-  style: :expanded
+  style: :compressed
 
