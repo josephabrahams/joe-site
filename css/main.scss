@@ -142,7 +142,7 @@ $slide-colors: (
     }
 }
 
-#video-player {
+.video-player {
     position: absolute;
     opacity: 0;
     transition: opacity 400ms ease;
@@ -155,6 +155,8 @@ $slide-colors: (
     bottom: 3px;
     color: rgba($black,0.8);
     font-size: 12px;
+    opacity: 0;
+    transition: opacity 400ms ease;
 }
 
 
@@ -165,14 +167,9 @@ $slide-colors: (
 \*------------------------------------*/
 
 // Hide visually and from screen readers: h5bp.com/u
-
 .hidden {
     display: none !important;
     visibility: hidden;
-}
-
-.visible {
-    opacity: 1 !important;
 }
 
 // Hide only visually, but have it available for screen readers: h5bp.com/v
@@ -185,5 +182,9 @@ $slide-colors: (
     padding: 0;
     position: absolute;
     width: 1px;
+}
+
+.show {
+    opacity: 1;
 }
 

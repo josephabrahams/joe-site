@@ -1,13 +1,12 @@
-/* jshint browser: true, devel: true, jquery: true */
+/* jshint browser: true, devel: true */
 /* global Modernizr, YT */
 
-;(function($, window, undefined) {
+;(function(window, document, undefined) {
   'use strict';
 
-  var $document = $(window.document);
   var player;
-  var $videoPlayer;
-  var $muteButton = $('.mute-button');
+  var playerFrame;
+  var muteButton = document.getElementsByClassName('mute-button')[0];
 
   function getVideoProperties() {
     var height;
@@ -15,8 +14,8 @@
     var top;
     var left;
 
-    var windowHeight = $(window).height();
-    var windowWidth  = $(window).width();
+    var windowHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+    var windowWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 
     var windowAspectRatio = windowWidth/windowHeight;
     var videoAspectRatio  = 16/9;
@@ -42,33 +41,45 @@
   }
 
   function repositionVideo() {
-    $videoPlayer.css(getVideoProperties());
-  }
-
-  var isMobile;
-  if (Modernizr.mq('only all and (max-width: 1024px)') && Modernizr.touch) {
-    isMobile = true;
-  }
-
-  if (!isMobile) {
-    // 2. This code loads the IFrame Player API code asynchronously.
-    var tag = document.createElement('script');
-
-    tag.src = 'https://www.youtube.com/iframe_api';
-    var firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-  } else {
-    console.log('Video not available on mobile');
-  }
-
-  // 3. This function creates an <iframe> (and YouTube player)
-  //    after the API code downloads.
-  window.onYouTubeIframeAPIReady = function() {
     var playerAttrs = getVideoProperties();
 
-    player = new YT.Player('video-player', {
-      height: playerAttrs.height,
-      width: playerAttrs.width,
+    playerFrame.style.height = playerAttrs.height + 'px';
+    playerFrame.style.width  = playerAttrs.width  + 'px';
+    playerFrame.style.top    = playerAttrs.top    + 'px';
+    playerFrame.style.left   = playerAttrs.left   + 'px';
+  }
+
+  function toggleMute() {
+    if (player.isMuted()) {
+      player.unMute();
+      muteButton.innerText = 'mute';
+    } else {
+      player.mute();
+      muteButton.innerText = 'unmute';
+    }
+  }
+
+  // start the show
+  function onPlayerReady(event) {
+    event.target.setVolume(50);
+    event.target.mute();
+    event.target.playVideo();
+
+    playerFrame.className += ' show';
+    muteButton.className  += ' show';
+  }
+
+  // loop the video
+  function onPlayerStateChange(event) {
+    if (event.data === YT.PlayerState.ENDED) {
+      event.target.playVideo();
+    }
+  }
+
+  // called once the YouTube iframe player downloads
+  window.onYouTubeIframeAPIReady = function() {
+    // makes an iframe from #player
+    player = new YT.Player('player', {
       videoId: 'MR2V_3-B8y4',
       playerVars: {
         modestbranding: 1
@@ -79,50 +90,31 @@
       }
     });
 
-    $videoPlayer = $(player.c);
+    // create pointer to new YouTube iframe
+    playerFrame = player.c;
 
-    $videoPlayer.css({
-      top:  playerAttrs.top,
-      left: playerAttrs.left
-    });
+    muteButton.onclick = toggleMute;
+    window.onresize = repositionVideo;
+
+    repositionVideo();
   };
 
-  // 4. The API will call this function when the video player is ready.
-  function onPlayerReady(event) {
-    event.target.setVolume(50);
-    event.target.mute();
-    event.target.playVideo();
-    $videoPlayer.addClass('visible');
-    $muteButton.removeClass('hidden');
+  // define what mobile is
+  var isMobile;
+  if (Modernizr.mq('only all and (max-width: 1024px)') && Modernizr.touch) {
+    isMobile = true;
   }
 
-  // 5. The API calls this function when the player's state changes.
-  //    The function indicates that when playing a video (state=1),
-  //    the player should play for six seconds and then stop.
-  function onPlayerStateChange(event) {
-    if (event.data === YT.PlayerState.ENDED) {
-      event.target.playVideo();
-    }
-  }
+  // Load the YouTube player code asynchronously if not on mobile
+  if (!isMobile) {
+    var tag = document.createElement('script');
+    tag.src = 'https://www.youtube.com/iframe_api';
 
-  function toggleMute() {
-    if (player.isMuted()) {
-      player.unMute();
-      $muteButton.text('mute');
-    } else {
-      player.mute();
-      $muteButton.text('unmute');
-    }
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
   }
-
-  $document.ready(function() {
-    $muteButton.click(function() {
-      toggleMute();
-    });
-    $(window).resize(repositionVideo);
-  });
 
   console.log('trying to fix or change something, only guarantees and perpetuates its existence.');
 
-})(jQuery, window);
+})(window, document);
 
