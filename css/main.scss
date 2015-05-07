@@ -78,6 +78,12 @@ a {
         font-size: 1.15em;
     }
 
+    .slide__text--lower {
+        &::first-letter {
+            text-transform: lowercase;
+        }
+    }
+
 $slide-colors: (
     red: red,
     orange: orange,
