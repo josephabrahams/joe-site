@@ -16,5 +16,6 @@ safe: true
 
 # sass maps seem to have issues when minified using compressed option
 sass:
+  sass_dir: _sass
   style: :compressed
 
