@@ -91,7 +91,7 @@
     });
 
     // create pointer to new YouTube iframe
-    playerFrame = player.c;
+    playerFrame = player.getIframe();
 
     muteButton.onclick = toggleMute;
     window.onresize = repositionVideo;
