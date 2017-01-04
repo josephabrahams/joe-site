@@ -1,12 +1,12 @@
-# josephabrahams.com
+# joe-site
 
 ## Installation
 
-    $ git clone git@github.com:josephabrahams/josephabrahams.com.git
+    $ git clone git@github.com:josephabrahams/joe-site.git
 
     $ git remote add upstream git@github.com:josephabrahams/gh-pages.git
 
-    $ cd josephabrahams.com
+    $ cd joe-site
 
     $ bundle install
 
