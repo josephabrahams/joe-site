@@ -117,4 +117,3 @@
   console.log('trying to fix or change something, only guarantees and perpetuates its existence.');
 
 })(window, document);
-

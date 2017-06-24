@@ -29,4 +29,3 @@ Serve `_site` at <http://localhost:8000>, livereload expanded sass changes, rebu
 Parse `_sass`, `css`, and `js` for [Modernizr](http://modernizr.com/) references and build to `js/lib/modernizr.min.js`.
 
     $ grunt modernizr
-
