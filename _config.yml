@@ -1,20 +1,27 @@
 # Jekyll config
 
-exclude: [
-  bower.json,
-  CNAME,
-  Gemfile,
-  Gemfile.lock,
-  Gruntfile.js,
-  LICENSE,
-  node_modules,
-  package.json,
-  README.md
-]
+title: Joseph Abrahams - Washington, D.C.
+description: Vice President of Engineering at Mariana Tek.
+
+url: https://josephabrahams.com
+baseurl: ""
+
+plugins:
+  - jekyll-sitemap
 
 safe: true
 
-# sass maps seem to have issues when minified using compressed option
 sass:
   sass_dir: _sass
   style: :compressed
+
+exclude:
+  - bower.json
+  - CNAME
+  - Gemfile
+  - Gemfile.lock
+  - Gruntfile.js
+  - LICENSE
+  - package.json
+  - package-lock.json
+  - README.md

@@ -18,6 +18,11 @@ $orange: #dca26e;
 $medium: 40em;
 $large: 64.1em;
 
+::-moz-selection {
+    background-color: $orange;
+    color: $white;
+}
+
 ::selection {
     background-color: $orange;
     color: $white;
