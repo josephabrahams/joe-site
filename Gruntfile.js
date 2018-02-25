@@ -42,34 +42,6 @@ module.exports = function(grunt) {
           dest: '_site/'
       }
     },
-    modernizr: {
-      dist: {
-        devFile: 'js/lib/modernizr.min.js',
-        outputFile: 'js/lib/modernizr.min.js',
-        extra: {
-          shiv: true,
-          printshiv: false,
-          load: true,
-          mq: false,
-          cssclasses: true
-        },
-        // Based on default settings on http://modernizr.com/download/
-        extensibility: {
-          addtest: false,
-          prefixed: false,
-          teststyles: false,
-          testprops: false,
-          testallprops: false,
-          hasevents: false,
-          prefixes: false,
-          domprefixes: false,
-          cssclassprefix: ''
-        },
-        files : {
-          src: ['_sass/**','css/**','js/**']
-        },
-      }
-    },
     shell: {
       options: {
         stdout: false
@@ -124,7 +96,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-modernizr');
   grunt.loadNpmTasks('grunt-shell');
 
   // Custom tasks

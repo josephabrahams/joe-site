@@ -8,121 +8,76 @@
     #BASE
 \*------------------------------------*/
 
-$black: black;
-$white: white;
+// colors
+$black: #000;
+$gray: #777;
+$white: #fff;
+$orange: #dca26e;
+
+// breakpoints
+$medium: 40em;
+$large: 64.1em;
+
+::selection {
+    background-color: $orange;
+    color: $white;
+}
 
 html {
     box-sizing: border-box;
     color: $black;
-    font-size: 1em;
-    line-height: 1.4;
+    font-size: 14px;
+    line-height: 1.6;
+    font-family: Georgia, Times, "Times New Roman", serif;
 }
 
-@media (min-width: 40em) {
+@media (min-width: $medium) {
     html {
-        font-size: 1.2em;
+        font-size: 15px;
     }
 }
 
-@media (min-width: 64.1em) {
+@media (min-width: $large) {
     html {
-        font-size: 1.4em;
+        font-size: 16px;
     }
 }
 
 // apply a natural box layout model to all elements,
 // but allowing components to change
-
-*, *:before, *:after {
+*,
+*:before,
+*:after {
     box-sizing: inherit;
 }
 
-html, body {
+html,
+body,
+.full-height {
     height: 100%;
 }
 
 a {
     text-decoration: none;
-    color: $black;
-    &:hover, .touch & {
-        text-decoration: underline;
-    }
+    color: inherit;
 }
 
 
 
 
-
 /*------------------------------------*\
-    #SLIDES
+    #SLIDE
 \*------------------------------------*/
 
 .slide {
-    position: relative;
     height: 50%;
-    // min-height: 320px;
-    text-align: center;
-    z-index: 1;
+    width: 100%;
 }
 
-    .slide__text {
-        position: relative;
-        margin: 0;
-        top: 50%;
-        margin-top: -10px;
-        font-size: 1em;
-        line-height: 0em;
-        font-weight: normal;
-        font-style: normal;
-        font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
-    }
-
-    .slide__text--big {
-        font-size: 1.15em;
-    }
-
-    .slide__text--lower {
-        &::first-letter {
-            text-transform: lowercase;
-        }
-    }
-
-$slide-colors: (
-    red: red,
-    orange: orange,
-    // yellow: yellow,
-    green: green,
-    blue: blue,
-    indigo: indigo,
-    violet: violet
-);
-
-@each $color, $code in $slide-colors {
-    .slide--#{"" + $color} {
-        background: rgba($code, 0.5);
-        .slide__text, .slide__text a {
-            &::selection {
-                background: $code;
-                color: $white;
-            }
-            &::-moz-selection {
-                background: $code;
-                color: $white;
-            }
-        }
-    }
-}
-
-// compressing the css was stripping this out this selector
-.slide--yellow {
-    background: rgba(yellow, 0.5);
-    .slide__text, .slide__text a {
-        &::selection {
-            background: yellow;
-        }
-        &::-moz-selection {
-            background: yellow;
-        }
+@media screen and (min-width: $medium) {
+    .slide {
+        height: 100%;
+        width: 50%;
     }
 }
 
@@ -131,35 +86,124 @@ $slide-colors: (
 
 
 /*------------------------------------*\
-    #VIDEO
+    #PHOTO
 \*------------------------------------*/
 
-.video-frame {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    .no-js & {
-        display: none;
+.photo {
+    background-color: #DCA26E;
+}
+
+@media screen and (min-width: $medium) {
+    .photo {
+        position: fixed;
     }
 }
 
-.video-player {
-    position: absolute;
-    opacity: 0;
-    transition: opacity 400ms ease;
+.photo__photo {
+    background-size: cover;
+    background-position: center top;
+    height: 100%;
+    animation: fadein 1s;
 }
 
-.mute-button {
-    position: fixed;
-    z-index: 10;
-    right: 8px;
-    bottom: 3px;
-    color: rgba($black,0.8);
-    font-size: 12px;
-    opacity: 0;
-    transition: opacity 400ms ease;
+@media screen and (min-width: $medium) {
+    .photo__photo {
+        // background-position: center;
+    }
+}
+
+
+
+
+
+
+
+/*------------------------------------*\
+    #COPY
+\*------------------------------------*/
+
+.copy {
+      padding: 3rem 6%;
+}
+
+@media screen and (min-width: $medium) {
+    .copy {
+        padding: 3rem 3em;
+        float: right;
+    }
+}
+
+@media screen and (min-width: $large) {
+    .copy {
+        padding: 4rem 7rem;
+    }
+}
+
+.copy__container {
+    max-width: 36em;
+    margin: 0 auto 3rem;
+}
+
+.copy__heading {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 2.3em;
+    font-weight: 300;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+.copy__copy {
+    color: $gray;
+    font-weight: 100;
+    margin-top: 0;
+    margin-bottom: 1rem;
+
+    a {
+        // position: inline-block;
+        border-bottom: 1px $gray solid;
+        transition: border 400ms ease;
+
+        &:hover,
+        .touch & {
+            border-bottom: 1px $orange solid;
+        }
+    }
+}
+
+.copy__links {
+    margin-top: 1.5rem;
+}
+
+.copy__link {
+    margin-right: 0.5rem;
+
+    &:hover .icon {
+        fill: $orange;
+    }
+}
+
+.copy__colophon {
+    color: #ccc;
+    font-size: 0.8em;
+    font-style: italic;
+    margin-top: 3rem;
+
+    a {
+        color: inherit;
+
+        &:hover {
+            color: inherit;
+            text-decoration: underline;
+        }
+    }
+}
+
+.icon {
+    width: 1.5em;
+    height: 1.5em;
+    transition: fill 100ms ease;
 }
 
 
@@ -189,4 +233,18 @@ $slide-colors: (
 
 .show {
     opacity: 1;
+}
+
+.inline-list {
+    list-style: none;
+    padding-left: 0;
+
+    & li {
+        display: inline-block;
+    }
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
