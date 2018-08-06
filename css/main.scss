@@ -168,7 +168,7 @@ a {
     a {
         // position: inline-block;
         border-bottom: 1px $gray solid;
-        transition: border 400ms ease;
+        transition: border 100ms ease;
 
         &:hover,
         .touch & {
