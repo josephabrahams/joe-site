@@ -10,12 +10,12 @@
 
 // colors
 $black: #000;
-$gray: #777;
+$gray: #111;
 $white: #fff;
-$orange: #dca26e;
+$orange: #eca26e;
 
 // breakpoints
-$medium: 40em;
+$medium: 48em;
 $large: 64.1em;
 
 ::-moz-selection {
@@ -77,6 +77,16 @@ a {
 .slide {
     height: 50%;
     width: 100%;
+}
+
+@media screen and (orientation:landscape) {
+    .slide--photo {
+        height: 0;
+    }
+
+    .slide--copy {
+        height: 100%;
+    }
 }
 
 @media screen and (min-width: $medium) {
@@ -150,10 +160,10 @@ a {
 }
 
 .copy__heading {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 2.3em;
-    font-weight: 300;
-    letter-spacing: 1px;
+    font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+    font-size: 2.5em;
+    font-weight: bold;
+    letter-spacing: -2px;
     line-height: 1.2;
     margin-top: 0;
     margin-bottom: 1.5rem;
@@ -166,13 +176,14 @@ a {
     margin-bottom: 1rem;
 
     a {
-        // position: inline-block;
-        border-bottom: 1px $gray solid;
-        transition: border 100ms ease;
+        $orange: #f1bd99;
+        border-bottom: 1px $orange solid;
+        box-shadow: inset 0 -4px 0 $orange;
+        transition: background 150ms;
 
         &:hover,
         .touch & {
-            border-bottom: 1px $orange solid;
+            background-color: $orange;
         }
     }
 }
@@ -247,6 +258,10 @@ a {
     & li {
         display: inline-block;
     }
+}
+
+.tiny-space {
+    font-size: 0.667em;
 }
 
 @keyframes fadein {
