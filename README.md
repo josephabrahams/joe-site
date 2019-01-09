@@ -10,22 +10,12 @@
 
     $ bundle install
 
-    $ npm install
-
 ## Local Development
 
 Build Jekyll into `_site`:
 
-    $ grunt build
+    $ bundle exec jekyll build
 
-Build Jekyll and run [htmlproofer](https://github.com/gjtorikian/html-proofer) on `_site`:
+Serve `_site` at <http://localhost:4000>, livereload changes as needed:
 
-    $ grunt test
-
-Serve `_site` at <http://localhost:8000>, livereload expanded sass changes, rebuild Jekyll as needed:
-
-    $ grunt serve
-
-Parse `_sass`, `css`, and `js` for [Modernizr](http://modernizr.com/) references and build to `js/lib/modernizr.min.js`.
-
-    $ grunt modernizr
+    $ bundle exec jekyll serve --livereload

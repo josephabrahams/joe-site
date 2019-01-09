@@ -15,7 +15,6 @@
         <meta name="twitter:site" content="@josephabrahams">
         <link rel="canonical" href="{{ page.url | absolute_url }}">
         <link rel="icon" sizes="192x192" href="favicon.png">
-        <link rel="stylesheet" href="css/main.css">
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-27325104-1"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
@@ -23,6 +22,13 @@
             gtag('js', new Date());
             gtag('config', 'UA-27325104-1');
         </script>
+        <style>
+            {% capture styles %}
+            {% include_relative css/normalize.css %}
+            {% include_relative css/main.scss %}
+            {% endcapture %}
+            {{ styles | scssify }}
+        </style>
     </head>
     <body>
         <div class="slide slide--photo photo" style="background-image: url(img/joseph-abrahams.jpeg)">
