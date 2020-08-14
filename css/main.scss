@@ -29,7 +29,7 @@ html {
     color: $black;
     font-size: 14px;
     line-height: 1.6;
-    font-family: Georgia, Times, "Times New Roman", serif;
+    font-family: Helvetica, Arial, sans-serif;
 }
 
 @media (min-width: $medium) {
@@ -152,7 +152,7 @@ a {
 }
 
 .copy__heading {
-    font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+    font-family: Georgia, Times, "Times New Roman", serif;
     font-size: 2.5em;
     font-weight: bold;
     letter-spacing: -2px;
@@ -163,6 +163,7 @@ a {
 
 .copy__copy {
     color: $light-black;
+    font-size: 1.5em;
     font-weight: 100;
     margin-top: 0;
     margin-bottom: 1rem;
@@ -170,7 +171,7 @@ a {
     a {
         $orange: #f1bd99;
         border-bottom: 1px $orange solid;
-        box-shadow: inset 0 -4px 0 $orange;
+        // box-shadow: inset 0 -4px 0 $orange;
         transition: background 150ms;
 
         &:hover,
@@ -194,6 +195,7 @@ a {
 
 .copy__colophon {
     color: $gray;
+    font-family: Georgia, Times, "Times New Roman", serif;
     font-size: 0.8em;
     font-style: italic;
     margin-top: 3rem;
